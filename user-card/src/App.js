@@ -21,11 +21,16 @@ class App extends React.Component {
     this.fetchFollowers();
   }
 
+  handleUserChange = e => {
+    this.setState({ user: e.target.value });
+  };
+
   render() {
     console.log(this.state);
     return (
       <div className="App">
-        <CardList />
+        <input onChange={this.handleUserChange} placeholder="Select User" />
+        <CardList followers={this.state.followers} />
       </div>
     );
   }
