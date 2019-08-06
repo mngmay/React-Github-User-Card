@@ -11,7 +11,15 @@ class App extends React.Component {
   fetchFollowers = () => {
     fetch(`https://api.github.com/users/${this.state.user}/followers`)
       .then(res => res.json())
-      .then(users => this.setState({ followers: users }))
+      .then(users => {
+        users.forEach(user =>
+          fetch(user.url)
+            .then(user => user.json())
+            .then(user =>
+              this.setState({ followers: [...this.state.followers, user] })
+            )
+        );
+      })
       .catch(err => {
         console.log(err);
       });
@@ -26,7 +34,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <input onChange={this.handleUserChange} placeholder="Select User" />
