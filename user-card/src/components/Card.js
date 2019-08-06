@@ -20,6 +20,8 @@ export default function UserCard(props) {
   const { follower } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const name = follower.name ? String(follower.name) : String(follower.login);
+  const initial = name[0].toUpperCase();
 
   function handleExpandClick() {
     setExpanded(!expanded);
@@ -30,7 +32,7 @@ export default function UserCard(props) {
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
-              {follower.name}
+              {initial}
             </Avatar>
           }
           title={follower.name ? follower.name : follower.login}
