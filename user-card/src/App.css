@@ -11,3 +11,13 @@ body {
 .user-card {
   margin: 20px;
 }
+
+a {
+  color: inherit;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
