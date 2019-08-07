@@ -28,3 +28,22 @@ a {
   justify-content: space-around;
   padding: 10px;
 }
+
+input {
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+input {
+  text-align: center;
+  outline: none;
+}
+
+button {
+  height: 35px;
+  width: 70px;
+  margin-left: 10px;
+  border-radius: 10px;
+  outline: none;
+}

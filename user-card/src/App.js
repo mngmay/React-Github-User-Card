@@ -42,7 +42,7 @@ class App extends React.Component {
   };
 
   componentDidUpdate(props, prevstate) {
-    console.log("prev", prevstate.user, "this", this.state.user);
+    // console.log("prev", prevstate.user, "this", this.state.user);
     if (prevstate.user !== this.state.user) {
       this.setState({ followers: [] });
       this.fetchFollowers();
